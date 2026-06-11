@@ -1,2 +1,1 @@
-# pokedex
-App Pokedex
+Pokedex por Jacqueline Cruz Olguin

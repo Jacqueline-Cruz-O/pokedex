@@ -8,7 +8,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/pokedex" element={<Pokedex />} />
+            <Route path="*" element={<NotFound />} />
       </Routes>
+  
     </BrowserRouter>
   );
 }

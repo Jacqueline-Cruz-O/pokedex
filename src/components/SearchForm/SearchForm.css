@@ -1,0 +1,12 @@
+.search-form {
+  display: flex;
+  gap: 12px;
+}
+
+.search-form__input {
+  padding: 8px;
+}
+
+.search-form__button {
+  cursor: pointer;
+}

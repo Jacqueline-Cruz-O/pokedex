@@ -1,10 +1,5 @@
 function NotFound() {
-  return (
-    <main>
-      <h1>404</h1>
-      <p>Página no encontrada.</p>
-    </main>
-  );
+  return <h1>Página no encontrada</h1>;
 }
 
 export default NotFound;

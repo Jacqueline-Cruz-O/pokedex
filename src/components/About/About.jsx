@@ -1,16 +1,16 @@
 function About() {
   return (
     <section className="about">
-      <h2 className="about__title">
-        Acerca del proyecto
-      </h2>
+      <h2 className="about__title">Acerca del proyecto</h2>
 
       <p className="about__description">
-        Esta Pokédex permite explorar información de Pokémon utilizando datos obtenidos desde la PokeAPI.
+        Esta aplicación permite consultar información de Pokémon mediante la
+        PokeAPI.
       </p>
 
       <p className="about__description">
-        El proyecto está desarrollado con React, React Router y Vite.
+        Fue desarrollada con React, Vite y React Router, utilizando componentes
+        reutilizables y una interfaz adaptable a distintos dispositivos.
       </p>
     </section>
   );

@@ -4,7 +4,10 @@ function PokemonList({ pokemon }) {
   return (
     <section className="pokemon-list">
       {pokemon.map((item) => (
-        <PokemonCard key={item.id} pokemon={item} />
+        <PokemonCard
+          key={item.id}
+          pokemon={item}
+        />
       ))}
     </section>
   );

@@ -7,11 +7,18 @@ function PokemonCard({ pokemon }) {
         alt={pokemon.name}
       />
 
-      <h2 className="pokemon-card__name">{pokemon.name}</h2>
+      <h2 className="pokemon-card__name">
+        {pokemon.name.charAt(0).toUpperCase() +
+          pokemon.name.slice(1)}
+      </h2>
 
-      <p className="pokemon-card__id">#{pokemon.id}</p>
+      <p className="pokemon-card__id">
+        #{pokemon.id}
+      </p>
 
-      <p className="pokemon-card__type">{pokemon.type}</p>
+      <p className="pokemon-card__types">
+        {pokemon.types.join(" • ")}
+      </p>
     </article>
   );
 }

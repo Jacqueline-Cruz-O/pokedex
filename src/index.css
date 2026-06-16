@@ -1,0 +1,21 @@
+@import url("../src/vendor/normalize.css");
+@import url("../src/vendor/fonts/fonts.css");
+
+
+/*componentes */
+
+
+@import url(./blocks/About.css);
+@import url(./blocks/Footer.css);
+@import url(./blocks/Header.css);   
+@import url(./blocks/Navigation.css);
+@import url(./blocks/NotFound.css);
+@import url(./blocks/PokemonCard.css);
+@import url(./blocks/PokemonList.css);
+@import url(./blocks/Preloader.css);
+@import url(./blocks/SearchForm.css);
+
+/* Páginas */
+@import url("./blocks/Pokedex.css");
+
+/* Estilos globales */

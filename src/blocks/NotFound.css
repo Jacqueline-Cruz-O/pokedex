@@ -1,0 +1,30 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.not-found__title {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.not-found__message {
+  margin: 16px 0 24px;
+  font-size: 1.2rem;
+}
+
+.not-found__link {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.not-found__link:hover {
+  opacity: 0.8;
+}

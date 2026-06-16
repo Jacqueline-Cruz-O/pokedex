@@ -3,10 +3,10 @@ import PokemonCard from "../PokemonCard/PokemonCard";
 function PokemonList({ pokemon }) {
   return (
     <section className="pokemon-list">
-      {pokemon.map((item) => (
+      {pokemon.map((poke) => (
         <PokemonCard
-          key={item.id}
-          pokemon={item}
+          key={poke.id}
+          pokemon={poke}
         />
       ))}
     </section>

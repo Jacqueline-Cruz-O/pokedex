@@ -5,7 +5,7 @@ function About() {
 
       <p className="about__description">
         Esta aplicación permite consultar información de Pokémon mediante la
-        PokeAPI.
+        PokeAPI, puedes buscar de hasta 500 pokemons ya sea por nombre, número o tipo.
       </p>
 
       <p className="about__description">

@@ -4,7 +4,7 @@ function SearchForm({ value, onChange, onSubmit }) {
       <input
         className="search-form__input"
         type="text"
-        placeholder="Buscar Pokémon..."
+        placeholder="Busca por nombre, número o tipo..."
         value={value}
         onChange={onChange}
       />

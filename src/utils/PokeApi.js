@@ -1,7 +1,11 @@
 const BASE_URL = "https://pokeapi.co/api/v2";
 
-export async function getPokemonList(limit = 30) {
-  const response = await fetch(`${BASE_URL}/pokemon?limit=${limit}`);
+const POKEMON_LIMIT = 500;
+
+export async function getPokemonList() {
+  const response = await fetch(
+    `${BASE_URL}/pokemon?limit=${POKEMON_LIMIT}`
+  );
 
   if (!response.ok) {
     throw new Error("Error al obtener la lista de Pokémon");
@@ -9,15 +13,26 @@ export async function getPokemonList(limit = 30) {
 
   const data = await response.json();
 
-  return data.results.map((pokemon) => {
-    // La URL termina en .../pokemon/25/
-    const id = pokemon.url.split("/").filter(Boolean).pop();
+  const pokemonDetails = await Promise.all(
+    data.results.map(async (pokemon) => {
+      const detailResponse = await fetch(pokemon.url);
 
-    return {
-      id: Number(id),
-      name: pokemon.name,
-      image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
-      type: "Desconocido", // Lo mejoraremos más adelante si queremos mostrar el tipo real
-    };
-  });
+      if (!detailResponse.ok) {
+        throw new Error(`Error al obtener ${pokemon.name}`);
+      }
+
+      const detail = await detailResponse.json();
+
+      return {
+        id: detail.id,
+        name: detail.name,
+        image:
+          detail.sprites.front_default ||
+          detail.sprites.other["official-artwork"].front_default,
+        types: detail.types.map((t) => t.type.name),
+      };
+    })
+  );
+
+  return pokemonDetails.sort((a, b) => a.id - b.id);
 }

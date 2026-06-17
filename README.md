@@ -62,3 +62,9 @@ Jacqueline Cruz Olguín.
 
 Repositorio:
 
+https://github.com/Jacqueline-Cruz-O/pokedex/tree/stage-react-api
+
+
+Enlace a pages:
+
+https://jacqueline-cruz-o.github.io/pokedex/

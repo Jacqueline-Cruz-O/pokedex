@@ -17,5 +17,25 @@
 
 /* Páginas */
 @import url("./blocks/Pokedex.css");
+@import url("./blocks/Main.css");
 
 /* Estilos globales */
+
+/* Global */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}

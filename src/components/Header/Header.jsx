@@ -1,7 +1,13 @@
+import pokemonLogo from "../../images/pokemon-logo.png";
+
 function Header() {
   return (
     <header className="header">
-      <h1 className="header__logo">Biblioteca Pokémon</h1> 
+        <img
+        className="header__logo"
+        src={pokemonLogo}
+        alt="Pokémon"
+      />
     </header>
   );
 }

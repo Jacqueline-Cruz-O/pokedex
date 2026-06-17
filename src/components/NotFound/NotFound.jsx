@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import NotFoundImg from "../../images/notfound.png";
 
 function NotFound() {
   return (
@@ -6,9 +7,14 @@ function NotFound() {
       <h1 className="not-found__title">404</h1>
 
       <p className="not-found__message">
-        Parece que la ruta que buscas se escapó. Regresa al inicio para seguir
+       Aquí no encontraras ni fantasmas, regresa al inicio para seguir
         explorando la Pokédex.
       </p>
+         <img
+        className="not-found__image"
+        src={NotFoundImg}
+        alt="fantasma"
+      />
 
       <Link className="not-found__link" to="/">
         Volver al inicio

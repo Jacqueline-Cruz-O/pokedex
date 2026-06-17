@@ -4,11 +4,11 @@ function Navigation() {
   return (
     <nav className="navigation">
       <Link className="navigation__link" to="/">
-        Inicio
+        INICIO
       </Link>
 
       <Link className="navigation__link" to="/pokedex">
-        Pokédex
+        POKEDEX
       </Link>
     </nav>
   );

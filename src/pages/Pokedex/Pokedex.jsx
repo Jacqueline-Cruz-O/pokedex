@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 import Header from "../../components/Header/Header";
 import Navigation from "../../components/Navigation/Navigation";
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -18,9 +17,6 @@ function Pokedex() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-    setError("");
-
     getPokemonList()
       .then((data) => {
         setPokemon(data);
@@ -35,28 +31,23 @@ function Pokedex() {
       });
   }, []);
 
-  // Reiniciar el contador cuando cambia la búsqueda
-  useEffect(() => {
+  function handleSearchChange(event) {
+    setSearchTerm(event.target.value);
     setVisibleCount(3);
-  }, [searchTerm]);
+  }
 
   const search = searchTerm.trim().toLowerCase();
 
   const filteredPokemon = pokemon.filter((item) => {
-    // Buscar por número
     if (search !== "" && !isNaN(search)) {
       return item.id.toString().includes(search);
     }
 
-    // Buscar por nombre
     if (item.name.toLowerCase().includes(search)) {
       return true;
     }
 
-    // Buscar por tipo
-    return item.types.some((type) =>
-      type.toLowerCase().includes(search)
-    );
+    return item.types.some((type) => type.toLowerCase().includes(search));
   });
 
   return (
@@ -65,9 +56,9 @@ function Pokedex() {
       <Navigation />
 
       <main className="pokedex">
-          <SearchForm
+        <SearchForm
           value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
+          onChange={handleSearchChange}
           onSubmit={(event) => event.preventDefault()}
         />
 
@@ -76,21 +67,15 @@ function Pokedex() {
         ) : error ? (
           <p className="pokedex__error">{error}</p>
         ) : filteredPokemon.length === 0 ? (
-          <p className="pokedex__empty">
-            No se ha encontrado nada.
-          </p>
+          <p className="pokedex__empty">No se ha encontrado nada.</p>
         ) : (
           <>
-            <PokemonList
-              pokemon={filteredPokemon.slice(0, visibleCount)}
-            />
+            <PokemonList pokemon={filteredPokemon.slice(0, visibleCount)} />
 
             {visibleCount < filteredPokemon.length && (
               <button
                 className="pokedex__show-more"
-                onClick={() =>
-                  setVisibleCount((prev) => prev + 3)
-                }
+                onClick={() => setVisibleCount((prev) => prev + 3)}
               >
                 Mostrar más
               </button>

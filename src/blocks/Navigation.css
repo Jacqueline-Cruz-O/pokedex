@@ -1,0 +1,30 @@
+.navigation {
+  width: 100%;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  background-color: #3D7DCA;
+  color: #fff;
+}
+
+.navigation__link {
+  font-size: 1rem;
+  font-weight: 800;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navigation__link:hover {
+  color: #ffcb05;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    gap: 20px;
+    padding: 12px 16px;
+  }
+
+  .navigation__link {
+    font-size: 0.95rem;
+  }
+}

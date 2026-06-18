@@ -1,0 +1,35 @@
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about__title {
+  margin: 0 0 16px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.about__description {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about__description:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .about {
+    padding: 24px 20px;
+  }
+
+  .about__title {
+    font-size: 1.5rem;
+  }
+}

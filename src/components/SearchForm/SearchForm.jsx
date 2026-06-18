@@ -1,5 +1,5 @@
 
-import searchIcon from "../../images/search-icon.png";
+import searchIcon from "../../images/search-icon.svg";
 
 function SearchForm({ value, onChange, onSubmit }) {
   return (

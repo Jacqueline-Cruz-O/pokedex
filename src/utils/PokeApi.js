@@ -1,14 +1,10 @@
-const BASE_URL = "https://pokeapi.co/api/v2";
-
-const POKEMON_LIMIT = 500;
+import { BASE_URL, POKEMON_LIMIT } from "./constants";
 
 export async function getPokemonList() {
-  const response = await fetch(
-    `${BASE_URL}/pokemon?limit=${POKEMON_LIMIT}`
-  );
+  const response = await fetch(`${BASE_URL}/pokemon?limit=${POKEMON_LIMIT}`);
 
   if (!response.ok) {
-    throw new Error("Error al obtener la lista de Pokémon");
+    throw new Error("Error al obtener la lista Pokémon");
   }
 
   const data = await response.json();
@@ -29,7 +25,7 @@ export async function getPokemonList() {
         image:
           detail.sprites.front_default ||
           detail.sprites.other["official-artwork"].front_default,
-        types: detail.types.map((t) => t.type.name),
+        types: detail.types.map((typeInfo) => typeInfo.type.name),
       };
     })
   );
